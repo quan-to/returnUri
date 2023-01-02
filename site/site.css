@@ -88,8 +88,8 @@ a.hollow {
 }
 
 #settings {
-  white-space: nowrap;
-  display: inline-block;
+  white-space: pre-wrap;
+  display: flex;
   overflow: hidden;
   position: absolute;
   background: rgba(255,255,255,1);
