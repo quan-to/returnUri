@@ -96,11 +96,17 @@ window.onload = function(){
     document.querySelector("#msgTitle").setHTML("Finalizado com sucesso! 🎉");
     app = new AppClass();
     app.start();
-  } else {
+  } else if (success === "false") {
     app = new AppClassFail();
     app.start();
     document.querySelector("#msgTitle").setHTML(`${error_description} ❌` );
     document.querySelector("#msgSub").setHTML(`${paymentId}<br>${referenceCode}<br>${success}` );
+    document.querySelector("#msgSub").setAttribute('style', "")
+  } else {
+    app = new AppClassFail();
+    app.start();
+    document.querySelector("#msgTitle").setHTML(`Você não deveria estar aqui 🤔`);
+    document.querySelector("#msgSub").setHTML(`Se você está aqui neste momento, certamente é porque algo deu errado.` );
     document.querySelector("#msgSub").setAttribute('style', "")
   }
 }
